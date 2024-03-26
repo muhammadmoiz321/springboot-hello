@@ -1,6 +1,6 @@
 pipeline {
     agent any 
-    environment {which 
+    environment {
         // Define environment variables
         JAVA_HOME = '/usr/bin/java'
         MAVEN_HOME = '/usr/bin/mvn'
