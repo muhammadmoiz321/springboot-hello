@@ -1,5 +1,11 @@
 pipeline {
     agent any 
+    environment {which 
+        // Define environment variables
+        JAVA_HOME = '/usr/bin/java'
+        MAVEN_HOME = '/usr/bin/mvn'
+        PATH = "${env.JAVA_HOME}/bin:${env.MAVEN_HOME}/bin:${env.PATH}"
+    }
     tools {
         maven "maven3.6.3"
     
