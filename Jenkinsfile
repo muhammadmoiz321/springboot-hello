@@ -26,9 +26,10 @@ pipeline {
         stage('Build Docker image'){
           
             steps {
-                echo "Hello Java Express"
+                echo "Hello Java"
                 sh 'ls'
-                sh 'docker build -t  moiz86/docker_jenkins_springboot:${BUILD_NUMBER} .'
+                sh "docker build -t moiz86/docker_jenkins_springboot:${BUILD_NUMBER} ."
+
             }
         }
         stage('Docker Login'){
@@ -42,7 +43,7 @@ pipeline {
         stage('Docker deploy'){
             steps {
                
-                sh 'docker run -itd -p  8081:8080 new_container/docker_jenkins_springboot:${BUILD_NUMBER}'
+                sh 'docker run -itd -p  8081:8080 new_container1/docker_jenkins_springboot:${BUILD_NUMBER}'
             }
         }
         stage('Archving') { 
