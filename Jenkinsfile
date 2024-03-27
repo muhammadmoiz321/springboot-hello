@@ -11,6 +11,13 @@ pipeline {
     
     }
     stages {
+        
+        stage('Install Dependencies') {
+           steps {
+               
+               sh "mvn dependency:resolve"
+           }
+    }
         stage('Compile and Clean') { 
             steps {
               
