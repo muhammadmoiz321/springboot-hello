@@ -14,7 +14,10 @@ pipeline {
         stage('Compile and Clean') { 
             steps {
               
-                sh "mvn clean compile"
+                 sh "mvn clean"
+        
+        // Compile the source code
+                 sh "mvn compile"
             }
         }
         stage('deploy') { 
